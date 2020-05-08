@@ -29,20 +29,19 @@ end
 
 
 def consolidate_cart(cart)
-  new_cart = {}
-
-   cart.each do |elements|
-     contents.each do |key, value|
-     if new_cart.include?(key)
-       new_cart[key][:count] += 1
+  consolidated = {}
+   cart.each do |contents|
+     contents.each do |item, info|
+     if consolidated.include?(item)
+       consolidated[item][:count] += 1
      else
-       new_cart[key] = {
-           :price => value[:price],
-           :clearance => value[:clearance],
+       consolidated[item] = {
+           :price => info[:price],
+           :clearance => info[:clearance],
            :count => 1
        }
      end
    end
  end
- new_cart
+ consolidated
  end
