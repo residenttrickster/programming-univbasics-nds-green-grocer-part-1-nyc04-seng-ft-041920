@@ -30,7 +30,7 @@ end
 
 def consolidate_cart(cart)
   new_cart = {}
-  
+
    cart.each do |elements|
      contents.each do |key, value|
      if new_cart.include?(key)
@@ -45,4 +45,4 @@ def consolidate_cart(cart)
    end
  end
  new_cart
- end		 
+ end
