@@ -20,7 +20,7 @@ def consolidate_cart(cart)
       if new_hash[name] = key[:item]
       new_hash[name][:count] +=1
       end
-    end 
-  end 
+    end
+  end
   new_hash
 end
