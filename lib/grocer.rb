@@ -23,6 +23,6 @@ def consolidate_cart(cart)
     cart[:count] = cart[:item].count
     new_array = cart[counter]
     new_array << cart[:count]
-    counter+= 1   
+    counter+= 1
     end
 end
