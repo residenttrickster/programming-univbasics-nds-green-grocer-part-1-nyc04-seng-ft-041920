@@ -21,6 +21,8 @@ def consolidate_cart(cart)
   new_array = []
   while counter < cart.length do
     cart[:count] = cart[:item].count
+    new_array = cart[counter]
+    new_array << cart[:count]
     counter+= 1   
     end
 end
