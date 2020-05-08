@@ -14,23 +14,15 @@ end
 
 def consolidate_cart(cart)
   new_cart = []
-
-  cart.each do |arr_item|
-    #adds count value to original cart
-    arr_item[:count] = 1
-
-    #if item doesn't exist in new_cart, add the whole arr_item
-    if !find_item_by_name_in_collection(arr_item[:item], new_cart)
-      new_cart.push(arr_item)
-
-    #else - if it does exist, simply increase count by 1
+  cart.each do |element|
+  element[:count] = 1
+    if !find_item_by_name_in_collection(element[:item], new_cart)
+      new_cart << element
     else
      new_cart.each do |item|
       item[:count] += 1
      end
     end
   end
-
-  pp new_cart
   return new_cart
 end
